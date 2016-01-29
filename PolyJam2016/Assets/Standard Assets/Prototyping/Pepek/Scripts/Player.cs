@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
         newPosition += new Vector3(Input.GetAxis(horizontal) * speed * Time.deltaTime, 0, Input.GetAxis(vertical) * speed * Time.deltaTime);
 
         transform.position = newPosition;
-    }
 
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
 }

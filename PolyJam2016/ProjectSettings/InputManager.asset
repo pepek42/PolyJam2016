@@ -73,8 +73,8 @@ InputManager:
     m_Name: Player Two Vertical
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: w
-    positiveButton: s
+    negativeButton: s
+    positiveButton: w
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -106,7 +106,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: b
+    positiveButton: delete
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
