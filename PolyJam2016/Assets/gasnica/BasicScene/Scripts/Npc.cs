@@ -31,9 +31,8 @@ public class Npc : MonoBehaviour {
     float angle = Random.Range(0, Mathf.PI * 2);
     velocity = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * input.StartSpeed;
 
-    r = 2.0f;
     maxspeed = 2;
-    maxforce = 0.03f;    
+    maxforce = 0.1f;    
     maxTargetForce = .1f;// 0.03f;
   }
 
@@ -53,8 +52,10 @@ public class Npc : MonoBehaviour {
     Vector3 sep = separate(boids, input);   // Separation
     Vector3 ali = align(boids);      // Alignment
     Vector3 coh = cohesion(boids, input);   // Cohesion
+    Vector3 drg = drag(input);
     // Arbitrarily weight these forces
-    sep *= 1.5f;
+    fol *= 2.0f;
+    sep *= 2.5f;
     ali *= 1.0f;
     coh *= 1.0f;
     // Add the force vectors to acceleration
@@ -63,6 +64,7 @@ public class Npc : MonoBehaviour {
     applyForce(sep);
     applyForce(ali);
     applyForce(coh);
+    applyForce(drg);
   }
 
   // Method to update transform.position
@@ -101,6 +103,7 @@ public class Npc : MonoBehaviour {
   Vector3 follow(Input input)
   {
     Vector3 steer = Vector3.zero;
+    float maxAmplification = 1.0f;
     foreach(NpcMgr.Attractor attractor in input.Attractors)
     {
       if (attractor.Transform)
@@ -110,12 +113,24 @@ public class Npc : MonoBehaviour {
         if (desired.magnitude < attractor.Radius && Vector3.Dot(desired, velocity) > 0 && attractor.Strength > 0) { continue; }
         // Don't repulse agents that are far
         if (desired.magnitude > attractor.Radius && attractor.Strength < 0) { continue; }
+          
         desired.Normalize();
         desired *= attractor.Strength;
+        
+        // Scale strength for close object
+        // 10x at zero distance
+        if (attractor.Strength < 0 && attractor.Radius > 0.1f)
+        {
+          // 1/x
+          float amplification = Mathf.Clamp(attractor.Radius / desired.magnitude, 0, 10);
+          desired *= amplification;
+          maxAmplification = Mathf.Max(amplification, maxAmplification);
+        } 
+        
         steer += desired - velocity;
       }      
     }
-    steer = Vector3.ClampMagnitude(steer, maxTargetForce);
+    steer = Vector3.ClampMagnitude(steer, maxTargetForce * maxAmplification);
     return steer;
   }
 
@@ -208,6 +223,21 @@ public class Npc : MonoBehaviour {
     } 
     else {
       return new Vector3(0, 0);
+    }
+  }
+  
+  Vector3 drag(Input input)
+  {
+    return Vector3.zero;
+    if (velocity.magnitude > maxspeed)
+    {
+      // apply drag
+      float targetFraction = maxspeed / velocity.magnitude;
+      return (-1 + targetFraction) * velocity;
+    }
+    else
+    {
+      return Vector3.zero;
     }
   }
 }
