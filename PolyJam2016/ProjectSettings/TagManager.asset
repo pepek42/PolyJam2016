@@ -11,6 +11,7 @@ TagManager:
   - Escort One
   - Escort Two
   - Dude Parent
+  - Altar
   layers:
   - Default
   - TransparentFX

@@ -3,11 +3,8 @@ using System.Collections;
 
 public class DestroyByCapture : MonoBehaviour
 {
-    private GameController gameController;
-
     void Start()
     {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     void OnTriggerEnter(Collider other)
