@@ -2,7 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class NpcMovement : MonoBehaviour {
+/*
+Todo: 
+ + set target positon for boid
+   - improvements:
+     - stronger stopping when reaching target
+ - always escape chasing players
+   - optional: have some max escape speed
+ - avoid obstacles
+
+*/
+
+public class NpcMgr : MonoBehaviour {
 
   public GameObject NpcTemplate;
   
@@ -13,11 +24,34 @@ public class NpcMovement : MonoBehaviour {
   public float SpawnRadius = 10;
   
   public int NumNpcs = 10;
+         
+  [System.Serializable]  
+  public class Attractor
+  {
+    public Transform Transform;
+    public float Strength = 1; // Can be negative
+    public float Radius = 10; // Radius beyond which attraction works, and below which repulsion workss
+  }
+  
+  [System.Serializable]
+  public class NpcInputStruct
+  {
+    public float MovementSpeed = 10;
+    public float NeighbourDist = 100;    
+    public float DesiredSeparation = 5;
+    public float StartSpeed = 1;
+    public List<Attractor> Attractors;
+  }
+  
+  public NpcInputStruct BoidInput = new NpcInputStruct();
+    
   
   List<Transform> Npcs = new List<Transform>();
 
 	// Use this for initialization
 	void Start () {
+    // Initialize structs
+    
 	  Random.seed = 123;
     SpawnNpcs();
 	}
@@ -26,7 +60,7 @@ public class NpcMovement : MonoBehaviour {
 	void Update () {
 	  UpdateNpcs();
 	}
-  
+    
   void SpawnNpcs()
   {
     for (int i = 0; i < NumNpcs; i++)
@@ -36,6 +70,8 @@ public class NpcMovement : MonoBehaviour {
       Vector3 offset = new Vector3(Random.Range(-r, r), 0, Random.Range(-r, r));
       GameObject npc = Instantiate(NpcTemplate, SpawnMarker.position + offset, Quaternion.identity) as GameObject;
       npc.transform.parent = NpcContainer;
+      Npc boid = npc.GetComponent<Npc>();
+      if (boid) { boid.Init(BoidInput); }
       Npcs.Add(npc.transform);
     }
   }
@@ -51,14 +87,14 @@ public class NpcMovement : MonoBehaviour {
 //       boid.run(boids);
 //     }
 //    
-    List<Boid> boids = new List<Boid>(); 
+    List<Npc> boids = new List<Npc>(); 
     foreach(Transform npc in Npcs)
     {
-      Boid boid = npc.GetComponent<Boid>();
+      Npc boid = npc.GetComponent<Npc>();
       boids.Add(boid);
       
     }
-    
-    foreach(Boid boid in boids) { boid.run(boids); }
+        
+    foreach(Npc boid in boids) { boid.run(boids, BoidInput); }
   }
 }
