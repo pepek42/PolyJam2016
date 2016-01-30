@@ -64,7 +64,7 @@ GameObject:
   - 195: {fileID: 19597586}
   m_Layer: 0
   m_Name: Dude
-  m_TagString: Dude
+  m_TagString: Dude Parent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
