@@ -243,15 +243,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   newTargetPosMultiplier: 5
-  switchPosTriggerRadius: 30
-  increaseSpeedThreshold: 8
   switchSensivity: 50
-  dudeAcceleration: 10
-  dudedeceleration: 2
   escort: {fileID: 184656, guid: 1f8d66d041af36d4997d8fbf1a5af4e6, type: 2}
   escortInstance: {fileID: 0}
   coulombsConstant: 10
-  electricField: {x: 50, y: 0, z: 0}
+  electricField: {x: 50, y: 0, z: 10}
+  forceToSpeedIncDiv: 100
+  bloodParticle: {fileID: 167550, guid: c75ea931ffb9239478316d72fb4f6f85, type: 2}
 --- !u!136 &13613914
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -304,6 +302,14 @@ Prefab:
       propertyPath: electricField.x
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: electricField.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bloodParticle
+      value: 
+      objectReference: {fileID: 167550, guid: c75ea931ffb9239478316d72fb4f6f85, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194342}

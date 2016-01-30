@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     public bool isPlayerOne = true;
 
 	Animator animator;
+    ParticleSystem particleSystem;
 
     private string horizontal;
     private string vertical;
@@ -15,9 +16,10 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		animator = GetComponentInChildren<Animator> ();
+        particleSystem = GetComponentInChildren<ParticleSystem>();
 
         // choosing right player inputs
-        if(isPlayerOne)
+        if (isPlayerOne)
         {
             horizontal = "Player One Horizontal";
             vertical = "Player One Vertical";
@@ -42,9 +44,11 @@ public class Player : MonoBehaviour {
 
 		if (inputs.magnitude <= 0) {
 			animator.SetBool ("walking", false);
-		} else {
+            particleSystem.Stop();
+        } else {
 			animator.SetBool ("walking", true);
-		}
+            particleSystem.Emit(1);
+        }
 
         // update player position
         Vector3 positionSwitch = new Vector3(inputs.x * speed * Time.deltaTime, 0, inputs.y * speed * Time.deltaTime);

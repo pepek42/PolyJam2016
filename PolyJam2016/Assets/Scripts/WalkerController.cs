@@ -16,6 +16,7 @@ public class WalkerController : MonoBehaviour {
     public float coulombsConstant;
     public Vector3 electricField;
     public float forceToSpeedIncDiv;
+    public GameObject bloodParticle; 
 
     private float minimumDistance = 2;
     private Vector3 targetVector;
@@ -45,7 +46,7 @@ public class WalkerController : MonoBehaviour {
             Vector3 force = new Vector3 (0, 0, 0);
 
             foreach (Transform playerTransform in players) {
-                
+
                 Vector3 dude_player_position_diff = transform.position - playerTransform.position;
                 dude_player_position_diff.y = 0;
  
@@ -92,6 +93,10 @@ public class WalkerController : MonoBehaviour {
             && (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f))
         {
             // Run mini game and at the end kill dude.
+  
+            GameObject bloodParticleInstance = (GameObject) Instantiate(bloodParticle, transform.position, Quaternion.Euler(-30, 30, 0));
+
+            Destroy(bloodParticleInstance, bloodParticleInstance.GetComponent<ParticleSystem>().startLifetime);
 
             KillDudeAndEscort();
         }
