@@ -7,11 +7,15 @@ public class StabbingController : MonoBehaviour {
 
 	public float minigame_speed = 2f;
 
+	AudioSource audio_source;
+	AudioClip sfx_miss, sfx_fail, sfx_win;
+
 	public StabbingStage stage = StabbingStage.hide;
 	StabbingStage previous_stage = StabbingStage.init;
 
 	int sub_stage;
 	float sub_stage_start;
+	bool skip_stage, fail_minigame;
 
 	GameObject stabber1;
 	GameObject stabber2;
@@ -43,6 +47,11 @@ public class StabbingController : MonoBehaviour {
 		stabber1 = GameObject.Find ("Stabber1");
 		stabber2 = GameObject.Find ("Stabber2");
 		target = GameObject.Find ("Minigame Target");
+
+		audio_source = GetComponentInChildren<AudioSource> ();
+		sfx_miss = Resources.Load<AudioClip> ("miss");
+		sfx_fail = Resources.Load<AudioClip> ("fail");
+		sfx_win = Resources.Load<AudioClip> ("win");
 	}
 	
 	// Update is called once per frame
@@ -56,6 +65,13 @@ public class StabbingController : MonoBehaviour {
 				stabber1.GetComponentInChildren<SpriteRenderer> ().enabled = false;
 				stabber2.GetComponentInChildren<SpriteRenderer> ().enabled = false;
 			}
+			if (previous_stage == StabbingStage.stabbing2) {
+				if (fail_minigame) {
+					audio_source.PlayOneShot(sfx_fail);
+				} else {
+					audio_source.PlayOneShot(sfx_win);
+				}
+			}
 			previous_stage = stage;
 			break;
 			#endregion
@@ -64,6 +80,8 @@ public class StabbingController : MonoBehaviour {
 			if (previous_stage != StabbingStage.stabbing1) {
 				sub_stage = 0;
 				sub_stage_start = Time.time;
+				skip_stage = false;
+				fail_minigame = false;
 
 				target.transform.rotation = MinigameRotation(target_rotation_1);
 				target.GetComponentInChildren<SpriteRenderer> ().enabled = true;
@@ -78,23 +96,29 @@ public class StabbingController : MonoBehaviour {
 			}
 			previous_stage = stage;
 
-			if (sub_stage == 0) {
-				current_stabber.transform.rotation = Quaternion.Slerp (from_rotation, to_rotation, (Time.time - sub_stage_start) * minigame_speed);
-				float angle = Quaternion.Angle (current_stabber.transform.rotation, to_rotation);
-				if (angle < 0.05f) {
-					current_stabber.transform.rotation = to_rotation;
-					from_rotation = current_stabber.transform.rotation;
-					to_rotation = MinigameRotation(stabber1_rotation_min);
-					sub_stage = 1;
-					sub_stage_start = Time.time;
+			if (!skip_stage) {
+				if (sub_stage == 0) {
+					current_stabber.transform.rotation = Quaternion.Slerp (from_rotation, to_rotation, (Time.time - sub_stage_start) * minigame_speed);
+					float angle = Quaternion.Angle (current_stabber.transform.rotation, to_rotation);
+					if (angle < 0.05f) {
+						current_stabber.transform.rotation = to_rotation;
+						from_rotation = current_stabber.transform.rotation;
+						to_rotation = MinigameRotation(stabber1_rotation_min);
+						sub_stage = 1;
+						sub_stage_start = Time.time;
+					}
+				} else if (sub_stage == 1) {
+					current_stabber.transform.rotation = Quaternion.Slerp (from_rotation, to_rotation, (Time.time - sub_stage_start) * minigame_speed);
+					float angle = Quaternion.Angle (current_stabber.transform.rotation, to_rotation);
+					if (angle < 0.05f) {
+						fail_minigame = true;
+						stage = StabbingStage.stabbing2;
+						current_stabber.GetComponentInChildren<SpriteRenderer> ().enabled = false;
+					}
 				}
-			} else if (sub_stage == 1) {
-				current_stabber.transform.rotation = Quaternion.Slerp (from_rotation, to_rotation, (Time.time - sub_stage_start) * minigame_speed);
-				float angle = Quaternion.Angle (current_stabber.transform.rotation, to_rotation);
-				if (angle < 0.05f) {
-					stage = StabbingStage.stabbing2;
-					current_stabber.GetComponentInChildren<SpriteRenderer> ().enabled = false;
-				}
+			} else {
+				stage = StabbingStage.stabbing2;
+				current_stabber.GetComponentInChildren<SpriteRenderer> ().enabled = false;
 			}
 			break;
 			#endregion
@@ -103,6 +127,7 @@ public class StabbingController : MonoBehaviour {
 			if (previous_stage != StabbingStage.stabbing2) {
 				sub_stage = 0;
 				sub_stage_start = Time.time;
+				skip_stage = false;
 
 				target.transform.rotation = MinigameRotation(target_rotation_2);
 				target.GetComponentInChildren<SpriteRenderer> ().enabled = true;
@@ -117,23 +142,29 @@ public class StabbingController : MonoBehaviour {
 			}
 			previous_stage = stage;
 
-			if (sub_stage == 0) {
-				current_stabber.transform.rotation = Quaternion.Slerp (from_rotation, to_rotation, (Time.time - sub_stage_start) * minigame_speed);
-				float angle = Quaternion.Angle (current_stabber.transform.rotation, to_rotation);
-				if (angle < 0.05f) {
-					current_stabber.transform.rotation = to_rotation;
-					from_rotation = current_stabber.transform.rotation;
-					to_rotation = MinigameRotation(stabber2_rotation_min);
-					sub_stage = 1;
-					sub_stage_start = Time.time;
+			if (!skip_stage) {
+				if (sub_stage == 0) {
+					current_stabber.transform.rotation = Quaternion.Slerp (from_rotation, to_rotation, (Time.time - sub_stage_start) * minigame_speed);
+					float angle = Quaternion.Angle (current_stabber.transform.rotation, to_rotation);
+					if (angle < 0.05f) {
+						current_stabber.transform.rotation = to_rotation;
+						from_rotation = current_stabber.transform.rotation;
+						to_rotation = MinigameRotation(stabber2_rotation_min);
+						sub_stage = 1;
+						sub_stage_start = Time.time;
+					}
+				} else if (sub_stage == 1) {
+					current_stabber.transform.rotation = Quaternion.Slerp (from_rotation, to_rotation, (Time.time - sub_stage_start) * minigame_speed);
+					float angle = Quaternion.Angle (current_stabber.transform.rotation, to_rotation);
+					if (angle < 0.05f) {
+						fail_minigame = true;
+						stage = StabbingStage.hide;
+						current_stabber.GetComponentInChildren<SpriteRenderer> ().enabled = false;
+					}
 				}
-			} else if (sub_stage == 1) {
-				current_stabber.transform.rotation = Quaternion.Slerp (from_rotation, to_rotation, (Time.time - sub_stage_start) * minigame_speed);
-				float angle = Quaternion.Angle (current_stabber.transform.rotation, to_rotation);
-				if (angle < 0.05f) {
-					stage = StabbingStage.hide;
-					current_stabber.GetComponentInChildren<SpriteRenderer> ().enabled = false;
-				}
+			} else {
+				stage = StabbingStage.hide;
+				current_stabber.GetComponentInChildren<SpriteRenderer> ().enabled = false;
 			}
 			break;
 			#endregion
@@ -146,11 +177,12 @@ public class StabbingController : MonoBehaviour {
 			action_axis_already_down = true;
 
 			float angle = Quaternion.Angle (target.transform.rotation, current_stabber.transform.rotation);
-			if (Mathf.Abs(angle) <= target_treshold) {
-				Debug.Log("HIT!");
-			} else {
-				Debug.Log("Miss!");
+			if (Mathf.Abs(angle) > target_treshold) {
+//				audio_source.PlayOneShot(sfx_miss);
+				fail_minigame = true;
 			}
+
+			skip_stage = true;
 
 		} else if (input <= 0 && action_axis_already_down) {
 			action_axis_already_down = false;
