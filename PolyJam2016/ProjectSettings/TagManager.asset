@@ -7,6 +7,10 @@ TagManager:
   - Player One
   - Player Two
   - Dude
+  - Dudes slaughter point
+  - Escort One
+  - Escort Two
+  - Dude Parent
   layers:
   - Default
   - TransparentFX
