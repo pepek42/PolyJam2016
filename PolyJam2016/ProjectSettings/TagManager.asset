@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Player One
   - Player Two
+  - Dude
   layers:
   - Default
   - TransparentFX
