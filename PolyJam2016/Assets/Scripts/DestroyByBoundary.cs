@@ -3,19 +3,20 @@ using System.Collections;
 
 public class DestroyByBoundary : MonoBehaviour {
 
-    public GameController gameController;
+    private GameController gameController;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Dude")
         {
             Destroy(other.gameObject.transform.parent.gameObject);
-        } else if(other.tag == "Player One" || other.tag == "Player Two")
+        }
+        else if(other.tag == "Player One" || other.tag == "Player Two")
         {
             gameController.GameOver();
         }

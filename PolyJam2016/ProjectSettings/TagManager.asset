@@ -12,6 +12,8 @@ TagManager:
   - Escort Two
   - Dude Parent
   - Altar
+  - LeftEscortSpawner
+  - RightEscortSpawner
   layers:
   - Default
   - TransparentFX

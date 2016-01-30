@@ -7,7 +7,9 @@ public class GameController : MonoBehaviour {
 
     public float startWait = 2;
     public float spawnWait = 10;
-    public Vector3 spawnValues;
+    public Vector2 spawnXLimits;
+    public float a;
+    public float b;
 
     // Use this for initialization
     void Start () {
@@ -20,7 +22,8 @@ public class GameController : MonoBehaviour {
         while (true)
         {
             GameObject hazard = dudes[Random.Range(0, dudes.Length)];
-            Vector3 spawnPosition = new Vector3(spawnValues.x, spawnValues.y, Random.Range(0, spawnValues.z));
+            float randomX = Random.Range(spawnXLimits.x, spawnXLimits.y);
+            Vector3 spawnPosition = new Vector3(randomX, 2, randomX * a + b);
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(hazard, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(spawnWait);

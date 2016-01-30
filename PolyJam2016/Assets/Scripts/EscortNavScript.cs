@@ -19,13 +19,16 @@ public class EscortNavScript : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        //gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        Vector3 initPositionWithShift = new Vector3(
-            isLeft ? -initPosition.x : initPosition.x,
-            initPosition.y,
-            initPosition.z
-            );
-        transform.position = initPositionWithShift;
+        string searchString;
+        if(isLeft)
+        {
+            searchString = "LeftEscortSpawner";
+        }
+        else
+        {
+            searchString = "RightEscortSpawner";
+        }
+        transform.position = GameObject.FindGameObjectWithTag(searchString).transform.position;
     }
 
     // Update is called once per frame

@@ -113,7 +113,7 @@ public class WalkerController : MonoBehaviour {
         target = newTarget;
         isCaptured = true;
         navMeshAgent.speed /= 3;
-        escortInstance = Instantiate(escort);
+        escortInstance = (GameObject) Instantiate(escort, new Vector3(0,0,0), Quaternion.identity);
         Transform escorts = escortInstance.transform;
         foreach(Transform escortDude in escorts)
         {

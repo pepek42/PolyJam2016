@@ -5,6 +5,7 @@ public class Player : MonoBehaviour {
 
     public float speed = 15;
     public bool isPlayerOne = true;
+    public Vector2 playerSpeedMulti;
 
 	Animator animator;
     ParticleSystem particleSystem;
@@ -51,7 +52,9 @@ public class Player : MonoBehaviour {
         }
 
         // update player position
-        Vector3 positionSwitch = new Vector3(inputs.x * speed * Time.deltaTime, 0, inputs.y * speed * Time.deltaTime);
+        Vector3 positionSwitch = new Vector3(inputs.x * speed * Time.deltaTime * playerSpeedMulti.x,
+            0,
+            inputs.y * speed * Time.deltaTime * playerSpeedMulti.y);
         transform.position += positionSwitch;
             
         // we don't want player to fall

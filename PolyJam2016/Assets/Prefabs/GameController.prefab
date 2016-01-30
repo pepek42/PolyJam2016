@@ -43,7 +43,9 @@ MonoBehaviour:
   - {fileID: 194342, guid: 83dbe014eb1ca3a40837deb84387e9fa, type: 2}
   startWait: 1
   spawnWait: 3
-  spawnValues: {x: -40, y: 2, z: 30}
+  spawnXLimits: {x: -57.03, y: -30.44}
+  a: -7.0740743
+  b: -412.22223
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
