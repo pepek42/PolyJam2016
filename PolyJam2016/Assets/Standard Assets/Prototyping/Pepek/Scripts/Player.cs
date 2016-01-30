@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        // choosing right player inputs
         if(isPlayerOne)
         {
             horizontal = "Player One Horizontal";
@@ -28,11 +29,18 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate()
     {
-        Vector3 newPosition = transform.position;
-        newPosition += new Vector3(Input.GetAxis(horizontal) * speed * Time.deltaTime, 0, Input.GetAxis(vertical) * speed * Time.deltaTime);
+        // input normalization
+        Vector2 inputs = new Vector2(Input.GetAxis(horizontal), Input.GetAxis(vertical));
+        if (inputs.magnitude > 1)
+        {
+            inputs.Normalize();
+        }
 
-        transform.position = newPosition;
-
+        // update player position
+        Vector3 positionSwitch = new Vector3(inputs.x * speed * Time.deltaTime, 0, inputs.y * speed * Time.deltaTime);
+        transform.position += positionSwitch;
+            
+        // we don't want player to fall
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }
