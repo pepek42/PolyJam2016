@@ -51,7 +51,6 @@ public class NpcMovement : MonoBehaviour {
 //       boid.run(boids);
 //     }
 //    
-    Debug.Log("num npcs" + Npcs.Count);
     List<Boid> boids = new List<Boid>(); 
     foreach(Transform npc in Npcs)
     {
