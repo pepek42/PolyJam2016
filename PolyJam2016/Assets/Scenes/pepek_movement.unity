@@ -210,6 +210,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11489206, guid: e17e2b7027564d14db15de5759a9b2f4, type: 2}
+      propertyPath: magnitudeOfCharge
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e17e2b7027564d14db15de5759a9b2f4, type: 2}
   m_IsPrefabParent: 0
@@ -319,7 +323,7 @@ MonoBehaviour:
   - {fileID: 194342, guid: 83dbe014eb1ca3a40837deb84387e9fa, type: 2}
   startWait: 1
   spawnWait: 3
-  spawnValues: {x: -40, y: 2, z: 40}
+  spawnValues: {x: -40, y: 2, z: 30}
 --- !u!4 &223948500
 Transform:
   m_ObjectHideFlags: 0
@@ -596,6 +600,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11414026, guid: 065b9e926b87fc349bb3dc0f08455a06, type: 2}
+      propertyPath: magnitudeOfCharge
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 065b9e926b87fc349bb3dc0f08455a06, type: 2}
   m_IsPrefabParent: 0
@@ -705,6 +713,7 @@ Transform:
   - {fileID: 652433276}
   - {fileID: 1869823211}
   - {fileID: 1988399487}
+  - {fileID: 1804713389}
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!1 &1658756565
@@ -760,6 +769,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &1804713388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1804713389}
+  - 114: {fileID: 1804713390}
+  m_Layer: 0
+  m_Name: Altar
+  m_TagString: Altar
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804713389
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804713388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 40}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1569738197}
+  m_RootOrder: 6
+--- !u!114 &1804713390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804713388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7841fa821075e8d4190fd3b0795705d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitudeOfCharge: 7000
 --- !u!1 &1869823210
 GameObject:
   m_ObjectHideFlags: 0

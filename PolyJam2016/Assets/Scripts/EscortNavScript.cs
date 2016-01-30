@@ -4,7 +4,7 @@ using System.Collections;
 public class EscortNavScript : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
-    private GameController gameController;
+    //private GameController gameController;
     private Vector3 startingPosition;
     [SerializeField]
     private bool isLeft;
@@ -19,7 +19,7 @@ public class EscortNavScript : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        //gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         Vector3 initPositionWithShift = new Vector3(
             isLeft ? -initPosition.x : initPosition.x,
             initPosition.y,
@@ -31,7 +31,6 @@ public class EscortNavScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(capturedDude);//michal ppk
         if (capturedDude != null)
         {
             Vector3 shift;
@@ -49,7 +48,6 @@ public class EscortNavScript : MonoBehaviour
 
     public void setCapturedDude(GameObject _capturedDude)
     {
-        Debug.Log(_capturedDude);//michal ppk
         capturedDude = _capturedDude;
     }
 }
