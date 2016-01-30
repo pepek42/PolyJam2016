@@ -10,20 +10,28 @@ public class EscortNavScript : MonoBehaviour
     private bool isLeft;
     [SerializeField]
     private float shiftX = 3;
+    [SerializeField]
+    Vector3 initPosition = new Vector3(6.5f, 2, 7.5f);
+    [SerializeField]
+    private GameObject capturedDude;
 
     // Use this for initialization
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        startingPosition = transform.position;
+        Vector3 initPositionWithShift = new Vector3(
+            isLeft ? -initPosition.x : initPosition.x,
+            initPosition.y,
+            initPosition.z
+            );
+        transform.position = initPositionWithShift;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject capturedDude = gameController.GetCapturedDude();
-
+        Debug.Log(capturedDude);//michal ppk
         if (capturedDude != null)
         {
             Vector3 shift;
@@ -37,9 +45,11 @@ public class EscortNavScript : MonoBehaviour
             }
             navMeshAgent.SetDestination(capturedDude.transform.position + shift);
         }
-        else
-        {
-            navMeshAgent.SetDestination(startingPosition);
-        }
+    }
+
+    public void setCapturedDude(GameObject _capturedDude)
+    {
+        Debug.Log(_capturedDude);//michal ppk
+        capturedDude = _capturedDude;
     }
 }

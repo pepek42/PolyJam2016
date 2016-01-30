@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour {
         // TODO
         Debug.Log("Game over! Something ate your player in woods!");
     }
-
+    //michal ppk TODO NO NEED ANY MORE!?
     public GameObject GetCapturedDude()
     {
         GameObject[] dudes = GameObject.FindGameObjectsWithTag("Dude Parent");

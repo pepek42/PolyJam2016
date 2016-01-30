@@ -11,6 +11,8 @@ public class WalkerController : MonoBehaviour {
     public float switchSensivity = 20;
     public float dudeAcceleration = 10;
     public float dudedeceleration = 2;
+    public GameObject escort;
+    public GameObject escortInstance;
 
     private float minimumDistance = 2;
     private Vector3 targetVector;
@@ -97,6 +99,7 @@ public class WalkerController : MonoBehaviour {
                     if (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f)
                     {
                         Destroy(this.gameObject);
+                        Destroy(escortInstance);
                     }
                 }
             }
@@ -113,6 +116,20 @@ public class WalkerController : MonoBehaviour {
         target = newTarget;
         isCaptured = true;
         navMeshAgent.speed /= 3;
+        escortInstance = Instantiate(escort);
+        Debug.Log(escortInstance);//michal ppk
+        Transform escorts = escortInstance.transform;
+        Debug.Log(escorts);//michal ppk
+        foreach(Transform escortDude in escorts)
+        {
+            Debug.Log(escortDude.tag);
+            if (escortDude.tag == "Escort One" || escortDude.tag == "Escort Two")
+            {
+                EscortNavScript escortScript = escortDude.gameObject.GetComponent<EscortNavScript>();
+                Debug.Log(escortScript);//michal ppk
+                escortScript.setCapturedDude(gameObject);
+            }
+        }
     }
 
     public bool IsCaptured()

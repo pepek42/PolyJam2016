@@ -14,13 +14,10 @@ public class DestroyByCapture : MonoBehaviour
     {
         if (other.tag == "Dude")
         {
-            GameObject dude = other.gameObject.transform.parent.gameObject;
-            if (gameController.GetCapturedDude() == null)
+            WalkerController walkerController = other.GetComponentInParent<WalkerController>();
+            if (!walkerController.IsCaptured())
             {
-                WalkerController walkerController = dude.GetComponent<WalkerController>();
-
                 GameObject newTarget = GameObject.FindGameObjectWithTag("Dudes slaughter point");
-
                 if (newTarget != null)
                 {
                     walkerController.CaptureAndSetNewTarget(newTarget.transform);
@@ -29,10 +26,6 @@ public class DestroyByCapture : MonoBehaviour
                 {
                     Debug.Log("DestroyByCapture::OnTriggerEnter - Should not happened");
                 }
-            }
-            else
-            {
-                Destroy(dude);
             }
         }
     }
