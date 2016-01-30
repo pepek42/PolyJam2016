@@ -62,6 +62,7 @@ GameObject:
   - 4: {fileID: 443070}
   - 114: {fileID: 11445250}
   - 195: {fileID: 19597586}
+  - 114: {fileID: 11440534}
   m_Layer: 0
   m_Name: Dude
   m_TagString: Dude Parent
@@ -213,6 +214,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11440534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7841fa821075e8d4190fd3b0795705d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitudeOfCharge: 1
 --- !u!114 &11445250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,6 +241,7 @@ MonoBehaviour:
   players:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   newTargetPosMultiplier: 5
   switchPosTriggerRadius: 30
   increaseSpeedThreshold: 8
@@ -236,6 +250,8 @@ MonoBehaviour:
   dudedeceleration: 2
   escort: {fileID: 184656, guid: 1f8d66d041af36d4997d8fbf1a5af4e6, type: 2}
   escortInstance: {fileID: 0}
+  coulombsConstant: 10
+  electricField: {x: 50, y: 0, z: 0}
 --- !u!136 &13613914
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -275,7 +291,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: players.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: magnitudeOfCharge
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: electricField.x
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194342}

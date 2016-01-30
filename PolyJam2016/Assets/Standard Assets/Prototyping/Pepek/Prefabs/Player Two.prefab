@@ -328,6 +328,7 @@ GameObject:
   - 136: {fileID: 13609626}
   - 114: {fileID: 11474940}
   - 54: {fileID: 5498994}
+  - 114: {fileID: 11489206}
   m_Layer: 0
   m_Name: Player Two
   m_TagString: Player Two
@@ -974,6 +975,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   isPlayerOne: 0
+--- !u!114 &11489206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7841fa821075e8d4190fd3b0795705d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitudeOfCharge: 5
 --- !u!136 &13609626
 CapsuleCollider:
   m_ObjectHideFlags: 1
