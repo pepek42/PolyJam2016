@@ -6,12 +6,16 @@ public class Player : MonoBehaviour {
     public float speed = 15;
     public bool isPlayerOne = true;
 
+	Animator animator;
+
     private string horizontal;
     private string vertical;
     private string action;
 
     // Use this for initialization
     void Start () {
+		animator = GetComponentInChildren<Animator> ();
+
         // choosing right player inputs
         if(isPlayerOne)
         {
@@ -35,6 +39,12 @@ public class Player : MonoBehaviour {
         {
             inputs.Normalize();
         }
+
+		if (inputs.magnitude <= 0) {
+			animator.SetBool ("walking", false);
+		} else {
+			animator.SetBool ("walking", true);
+		}
 
         // update player position
         Vector3 positionSwitch = new Vector3(inputs.x * speed * Time.deltaTime, 0, inputs.y * speed * Time.deltaTime);
