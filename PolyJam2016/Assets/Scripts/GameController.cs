@@ -3,7 +3,6 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-    public GameObject sun;
     public GameObject[] dudes;
 
     public float startWait = 2;
@@ -37,5 +36,20 @@ public class GameController : MonoBehaviour {
     {
         // TODO
         Debug.Log("Game over! Something ate your player in woods!");
+    }
+
+    public GameObject GetCapturedDude()
+    {
+        GameObject[] dudes = GameObject.FindGameObjectsWithTag("Dude Parent");
+
+        foreach (GameObject dude in dudes)
+        {
+            if(dude.GetComponent<WalkerController>().IsCaptured())
+            {
+                return dude;
+            }
+        }
+
+        return null;
     }
 }
