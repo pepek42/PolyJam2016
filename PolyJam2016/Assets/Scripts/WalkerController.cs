@@ -115,23 +115,23 @@ public class WalkerController : MonoBehaviour {
 
             StabbingController stabbingMinigame = GameObject.FindGameObjectWithTag("StabbingMinigame").GetComponent<StabbingController>();
 
-            stabbingMinigame.Start(this);
+			Destroy(escortInstance);
+			stabbingMinigame.Start(this);
 
 			animator.SetBool ("walking", false);
 			animator.SetBool ("struggling", true);
 
             return;// michal ppk
 
-            GameObject bloodParticleInstance = (GameObject) Instantiate(bloodParticle, transform.position, Quaternion.Euler(-30, 30, 0));
-            Destroy(bloodParticleInstance, bloodParticleInstance.GetComponent<ParticleSystem>().startLifetime);
-            KillDudeAndEscort();
+//            GameObject bloodParticleInstance = (GameObject) Instantiate(bloodParticle, transform.position, Quaternion.Euler(-30, 30, 0));
+//            Destroy(bloodParticleInstance, bloodParticleInstance.GetComponent<ParticleSystem>().startLifetime);
+//            KillDudeAndEscort();
         }
     }
 
     public void KillDudeAndEscort()
     {
-        Destroy(this.gameObject);
-        Destroy(escortInstance);      
+		Destroy (this.gameObject);     
     }
 
     public void CaptureAndSetNewTarget(Transform newTarget)
