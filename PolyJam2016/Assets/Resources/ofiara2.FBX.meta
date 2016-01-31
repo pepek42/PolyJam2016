@@ -102,7 +102,11 @@ ModelImporter:
     400092: Rectangle02
     400094: Rectangle03
     4300000: ofiara
-    7400000: Take 001
+    7400000: Ofiara T Pose
+    7400002: Ofiara Idle
+    7400004: Ofiara One Step
+    7400006: Ofiara Walk
+    7400008: Ofiara Struggle
     9500000: //RootNode
     13700000: ofiara
   materials:
@@ -125,11 +129,631 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Ofiara T Pose
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy01
+        weight: 1
+      - path: ofiara
+        weight: 1
+      - path: Rectangle01
+        weight: 1
+      - path: Rectangle01/Circle01
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm/IK R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand/IK Chain01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04/Bone05
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21/Bone22
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28/Bone29
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09/Bone10
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14/Bone15
+        weight: 1
+      - path: Rectangle01/D_All
+        weight: 1
+      - path: Rectangle01/Rectangle02
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg/IK R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg/IK L Leg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ofiara Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy01
+        weight: 1
+      - path: ofiara
+        weight: 1
+      - path: Rectangle01
+        weight: 1
+      - path: Rectangle01/Circle01
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm/IK R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand/IK Chain01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04/Bone05
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21/Bone22
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28/Bone29
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09/Bone10
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14/Bone15
+        weight: 1
+      - path: Rectangle01/D_All
+        weight: 1
+      - path: Rectangle01/Rectangle02
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg/IK R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg/IK L Leg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ofiara One Step
+      takeName: Take 001
+      firstFrame: 13
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy01
+        weight: 1
+      - path: ofiara
+        weight: 1
+      - path: Rectangle01
+        weight: 1
+      - path: Rectangle01/Circle01
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm/IK R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand/IK Chain01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04/Bone05
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21/Bone22
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28/Bone29
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09/Bone10
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14/Bone15
+        weight: 1
+      - path: Rectangle01/D_All
+        weight: 1
+      - path: Rectangle01/Rectangle02
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg/IK R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg/IK L Leg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ofiara Walk
+      takeName: Take 001
+      firstFrame: 19
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy01
+        weight: 1
+      - path: ofiara
+        weight: 1
+      - path: Rectangle01
+        weight: 1
+      - path: Rectangle01/Circle01
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm/IK R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand/IK Chain01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04/Bone05
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21/Bone22
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28/Bone29
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09/Bone10
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14/Bone15
+        weight: 1
+      - path: Rectangle01/D_All
+        weight: 1
+      - path: Rectangle01/Rectangle02
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg/IK R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg/IK L Leg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ofiara Struggle
+      takeName: Take 001
+      firstFrame: 35
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy01
+        weight: 1
+      - path: ofiara
+        weight: 1
+      - path: Rectangle01
+        weight: 1
+      - path: Rectangle01/Circle01
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle02/Dummy R Arm/IK R Arm
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand
+        weight: 1
+      - path: Rectangle01/Circle01/Circle03/Dummy L Hand/IK Chain01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone03/Bone04/Bone05
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone16/Bone17/Bone18/Bone19/Bone20/Bone21/Bone22
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone02/Bone23/Bone24/Bone25/Bone26/Bone27/Bone28/Bone29
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone06/Bone07/Bone08/Bone09/Bone10
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14
+        weight: 1
+      - path: Rectangle01/Circle01/Dummy_centr/Bone01/Bone11/Bone12/Bone13/Bone14/Bone15
+        weight: 1
+      - path: Rectangle01/D_All
+        weight: 1
+      - path: Rectangle01/Rectangle02
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle02/Dummy R Leg/IK R Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg
+        weight: 1
+      - path: Rectangle01/Rectangle03/Dummy L Leg/IK L Leg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.7
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

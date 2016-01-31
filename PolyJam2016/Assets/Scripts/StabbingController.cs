@@ -71,6 +71,8 @@ public class StabbingController : MonoBehaviour {
 				} else {
 					audio_source.PlayOneShot(sfx_win);
 				}
+				this.victim.KillDudeAndEscort();
+				this.victim = null;
 			}
 			previous_stage = stage;
 			break;
@@ -189,9 +191,9 @@ public class StabbingController : MonoBehaviour {
 		}
 
 		// TODO: DELETE ME!
-		if (Input.GetKeyUp(KeyCode.P)) {
-			this.stage = StabbingStage.stabbing1;
-		}
+//		if (Input.GetKeyUp(KeyCode.P)) {
+//			this.stage = StabbingStage.stabbing1;
+//		}
 		#endregion
 	}
 
@@ -201,6 +203,8 @@ public class StabbingController : MonoBehaviour {
 			this.stage = StabbingStage.stabbing1;
 			return true;
 		} else {
+			Debug.Log ("Killing dude, because I have no time for this shit");
+			victim.KillDudeAndEscort ();
 			return false;
 		}
 	}
