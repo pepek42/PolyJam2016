@@ -24,8 +24,12 @@ public class WalkerController : MonoBehaviour {
     private NavMeshAgent navMeshAgent;
     private bool isCaptured;
 
+	Animator animator;
+
     // Use this for initialization
     void Start () {
+		animator = GetComponentInChildren<Animator> ();
+
         navMeshAgent = GetComponent<NavMeshAgent> ();
         targetVector = new Vector3(1, 0, 0);
 
@@ -78,6 +82,8 @@ public class WalkerController : MonoBehaviour {
                 float newSpeed = force.magnitude / forceToSpeedIncDiv + startSpeed;
 
                 navMeshAgent.speed = newSpeed;
+
+				animator.SetBool ("walking", true);
             }
             else
             {
@@ -110,6 +116,9 @@ public class WalkerController : MonoBehaviour {
             StabbingController stabbingMinigame = GameObject.FindGameObjectWithTag("StabbingMinigame").GetComponent<StabbingController>();
 
             stabbingMinigame.Start(this);
+
+			animator.SetBool ("walking", false);
+			animator.SetBool ("struggling", true);
 
             return;// michal ppk
 
