@@ -81,6 +81,7 @@ public class StabbingController : MonoBehaviour {
 				}
 
 				szaman.Stab();
+				szaman.Scream();
 
 				this.victim.KillDudeAndEscort();
 				this.victim = null;
