@@ -16,6 +16,7 @@ TagManager:
   - RightEscortSpawner
   - OnTopOfTempleSpawn
   - StabbingMinigame
+  - EndMessage
   layers:
   - Default
   - TransparentFX
