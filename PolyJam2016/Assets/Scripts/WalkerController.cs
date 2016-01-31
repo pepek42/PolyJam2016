@@ -37,52 +37,59 @@ public class WalkerController : MonoBehaviour {
 
         isCaptured = false;
     }
-    
+
     // Update is called once per frame
-    void Update () {
-        Vector3 newTargetPosition = new Vector3();
-        //updating dude NavMeshAgent component
-        if (!isCaptured) {
-            Vector3 force = new Vector3 (0, 0, 0);
-
-            foreach (Transform playerTransform in players) {
-
-                Vector3 dude_player_position_diff = transform.position - playerTransform.position;
-                dude_player_position_diff.y = 0;
- 
-                // player to dude distance
-                float distance = Mathf.Sqrt(Mathf.Pow(dude_player_position_diff.x, 2) + Mathf.Pow(dude_player_position_diff.z, 2)) - minimumDistance;
-                if (distance < 0.1) {
-                    distance = 0.1f;
-                }
-
-                force += dude_player_position_diff.normalized *
-                coulombsConstant
-                * gameObject.GetComponent<Electrostatic>().getMagOfCharge()
-                * playerTransform.gameObject.GetComponent<Electrostatic>().getMagOfCharge()
-                / Mathf.Pow(distance, 2); 
-            }
-            force += gameObject.GetComponent<Electrostatic>().getMagOfCharge() * electricField;
-
-            targetVector += force * Time.deltaTime * switchSensivity;
-            targetVector.Normalize();
-            newTargetPosition = transform.position + newTargetPosMultiplier * targetVector;
-            target.position = newTargetPosition;
-
-            float newSpeed = force.magnitude / forceToSpeedIncDiv + startSpeed;
-
-            navMeshAgent.speed = newSpeed;
-        }
-        else
-        {
-            newTargetPosition = target.position;
-
-            ActivateMinigameIfAtPostion();
-        }
-        // if active update
+    void Update()
+    {
         if (navMeshAgent.isActiveAndEnabled)
         {
-            navMeshAgent.SetDestination(newTargetPosition);
+            Vector3 newTargetPosition = new Vector3();
+            //updating dude NavMeshAgent component
+            if (!isCaptured)
+            {
+                Vector3 force = new Vector3(0, 0, 0);
+
+                foreach (Transform playerTransform in players)
+                {
+
+                    Vector3 dude_player_position_diff = transform.position - playerTransform.position;
+                    dude_player_position_diff.y = 0;
+
+                    // player to dude distance
+                    float distance = Mathf.Sqrt(Mathf.Pow(dude_player_position_diff.x, 2) + Mathf.Pow(dude_player_position_diff.z, 2)) - minimumDistance;
+                    if (distance < 0.1)
+                    {
+                        distance = 0.1f;
+                    }
+
+                    force += dude_player_position_diff.normalized *
+                    coulombsConstant
+                    * gameObject.GetComponent<Electrostatic>().getMagOfCharge()
+                    * playerTransform.gameObject.GetComponent<Electrostatic>().getMagOfCharge()
+                    / Mathf.Pow(distance, 2);
+                }
+                force += gameObject.GetComponent<Electrostatic>().getMagOfCharge() * electricField;
+
+                targetVector += force * Time.deltaTime * switchSensivity;
+                targetVector.Normalize();
+                newTargetPosition = transform.position + newTargetPosMultiplier * targetVector;
+                target.position = newTargetPosition;
+
+                float newSpeed = force.magnitude / forceToSpeedIncDiv + startSpeed;
+
+                navMeshAgent.speed = newSpeed;
+            }
+            else
+            {
+                newTargetPosition = target.position;
+
+                ActivateMinigameIfAtPostion();
+            }
+            // if active update
+            if (navMeshAgent.enabled)
+            {
+                navMeshAgent.SetDestination(newTargetPosition);
+            }
         }
     }
 
@@ -92,6 +99,8 @@ public class WalkerController : MonoBehaviour {
             && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance
             && (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f))
         {
+            navMeshAgent.enabled = false;
+
             // Run mini game and at the end kill dude.
             GameObject spawn = GameObject.FindGameObjectWithTag("OnTopOfTempleSpawn");
 
