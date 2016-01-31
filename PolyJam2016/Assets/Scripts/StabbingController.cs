@@ -8,6 +8,7 @@ public class StabbingController : MonoBehaviour {
 	public float minigame_speed = 2f;
 
 	SzamanController szaman;
+	GameController game;
 
 	AudioSource audio_source;
 	AudioClip sfx_miss, sfx_fail, sfx_win;
@@ -56,6 +57,7 @@ public class StabbingController : MonoBehaviour {
 		sfx_win = Resources.Load<AudioClip> ("win");
 
 		szaman = GameObject.Find ("Szaman").GetComponent<SzamanController> ();
+		game = GameObject.Find ("GameController").GetComponent<GameController> ();
 	}
 	
 	// Update is called once per frame
@@ -71,9 +73,11 @@ public class StabbingController : MonoBehaviour {
 			}
 			if (previous_stage == StabbingStage.stabbing2) {
 				if (fail_minigame) {
-					audio_source.PlayOneShot(sfx_fail);
+//					audio_source.PlayOneShot(sfx_fail);
+					game.addKilledOrRunningAwayDude(DudeEliminationType.KilledNotOk);
 				} else {
-					audio_source.PlayOneShot(sfx_win);
+//					audio_source.PlayOneShot(sfx_win);
+					game.addKilledOrRunningAwayDude(DudeEliminationType.KilledOk);
 				}
 
 				szaman.Stab();
