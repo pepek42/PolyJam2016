@@ -16,9 +16,5 @@ public class DestroyByBoundary : MonoBehaviour {
         {
             Destroy(other.gameObject.transform.parent.gameObject);
         }
-        else if(other.tag == "Player One" || other.tag == "Player Two")
-        {
-            gameController.GameOver();
-        }
     }
 }

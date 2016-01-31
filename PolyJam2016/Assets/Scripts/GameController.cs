@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public enum DudeEliminationType
 {
@@ -11,6 +12,8 @@ public enum DudeEliminationType
 public class GameController : MonoBehaviour {
 
     public GameObject[] dudes;
+
+    public int requaierdNumberOfDudes = 10;
 
     public float startWait = 2;
     public float spawnWait = 10;
@@ -31,6 +34,8 @@ public class GameController : MonoBehaviour {
     private int dudesKilledOK;
     private int dudesKilledNotOK;
 
+    private bool running;
+
     // Use this for initialization
     void Start () {
         StartCoroutine(SpawnDudes());
@@ -38,6 +43,8 @@ public class GameController : MonoBehaviour {
         dudesRunningAway = 0;
         dudesKilledOK = 0;
         dudesKilledNotOK = 0;
+
+        running = true;
     }
 
     IEnumerator SpawnDudes()
@@ -51,17 +58,34 @@ public class GameController : MonoBehaviour {
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(hazard, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(spawnWait);
+            if (!running)
+                break;
         }
     }
 
     // Update is called once per frame
     void Update () {
         // TODO ending and wining
+        if(!running && Input.GetKey(KeyCode.Space))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
     public void GameOver()
     {
-        // TODO
+        string msg;
+        if (dudesKilledOK > requaierdNumberOfDudes)
+        {
+            msg = "You won! Sun will rise tomorrow!";
+        }
+        else
+        {
+            msg = "You lose! Sun will not rise tomorrow!";
+        }
+        msg += "\nPress space to restart!";
+        GameObject.FindGameObjectWithTag("EndMessage").GetComponent<Text>().text = msg;
+        running = false;
     }
 
     public void addKilledOrRunningAwayDude(DudeEliminationType dudeType)
