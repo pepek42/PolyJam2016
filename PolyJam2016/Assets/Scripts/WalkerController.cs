@@ -93,11 +93,19 @@ public class WalkerController : MonoBehaviour {
             && (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f))
         {
             // Run mini game and at the end kill dude.
-  
+            GameObject spawn = GameObject.FindGameObjectWithTag("OnTopOfTempleSpawn");
+
+            transform.position = spawn.transform.position;
+            transform.rotation = spawn.transform.rotation;
+
+            StabbingController stabbingMinigame = GameObject.FindGameObjectWithTag("StabbingMinigame").GetComponent<StabbingController>();
+
+            stabbingMinigame.Start(this);
+
+            return;// michal ppk
+
             GameObject bloodParticleInstance = (GameObject) Instantiate(bloodParticle, transform.position, Quaternion.Euler(-30, 30, 0));
-
             Destroy(bloodParticleInstance, bloodParticleInstance.GetComponent<ParticleSystem>().startLifetime);
-
             KillDudeAndEscort();
         }
     }
