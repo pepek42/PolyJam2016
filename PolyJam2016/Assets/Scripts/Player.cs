@@ -42,6 +42,29 @@ public class Player : MonoBehaviour {
         {
             inputs.Normalize();
         }
+        if(inputs.magnitude > 0)
+        {
+            float inputDots = Vector2.Dot(inputs.normalized, new Vector2(1, 0));
+            float arcCos = Mathf.Acos(inputDots);
+            float yRotation = Mathf.Rad2Deg * arcCos;
+
+            if (inputs.normalized.y > 0)
+            {
+                yRotation *= -1;
+            }
+
+            yRotation += 90;
+
+            Debug.Log("Y - rotation params");
+            Debug.Log(inputs);
+            Debug.Log(inputDots);
+            Debug.Log(arcCos);
+            Debug.Log(yRotation);
+            transform.rotation = Quaternion.Euler(
+                0,
+                yRotation,
+                0);
+        }
 
 		if (inputs.magnitude <= 0) {
 			animator.SetBool ("walking", false);
@@ -58,6 +81,6 @@ public class Player : MonoBehaviour {
         transform.position += positionSwitch;
             
         // we don't want player to fall
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        //transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

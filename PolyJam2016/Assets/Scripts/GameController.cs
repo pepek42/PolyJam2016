@@ -62,7 +62,6 @@ public class GameController : MonoBehaviour {
     public void GameOver()
     {
         // TODO
-        Debug.Log("Game over! Something ate your player in woods!");
     }
 
     public void addKilledOrRunningAwayDude(DudeEliminationType dudeType)
