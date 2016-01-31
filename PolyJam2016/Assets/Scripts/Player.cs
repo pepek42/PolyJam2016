@@ -55,11 +55,6 @@ public class Player : MonoBehaviour {
 
             yRotation += 90;
 
-            Debug.Log("Y - rotation params");
-            Debug.Log(inputs);
-            Debug.Log(inputDots);
-            Debug.Log(arcCos);
-            Debug.Log(yRotation);
             transform.rotation = Quaternion.Euler(
                 0,
                 yRotation,
