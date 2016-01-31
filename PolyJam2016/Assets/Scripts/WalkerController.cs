@@ -119,7 +119,7 @@ public class WalkerController : MonoBehaviour {
         }
     }
 
-    private void KillDudeAndEscort()
+    public void KillDudeAndEscort()
     {
         Destroy(this.gameObject);
         Destroy(escortInstance);      
