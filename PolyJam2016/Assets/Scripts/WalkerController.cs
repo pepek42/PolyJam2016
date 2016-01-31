@@ -131,8 +131,13 @@ public class WalkerController : MonoBehaviour {
 
     public void KillDudeAndEscort()
     {
-		Destroy (this.gameObject);     
+//		animator.SetBool ("dying", true);
+		Destroy (this.gameObject);
     }
+
+	public void Died() {
+		Destroy (this.gameObject);
+	}
 
     public void CaptureAndSetNewTarget(Transform newTarget)
     {
